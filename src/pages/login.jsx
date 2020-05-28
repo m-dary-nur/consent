@@ -1,10 +1,9 @@
-import React from "react"
-import logo from "./logo.svg"
-import "./App.css"
-import "./styles/global.css"
+import React, { memo, useState } from "react"
+import logo from "../logo.svg"
+import history from "../helpers/history"
 
-const App = () => {
-   const [form, setForm] = React.useState({
+const Login = () => {
+   const [form, setForm] = useState({
       username: "",
       password: "",
       remember: false,
@@ -20,12 +19,16 @@ const App = () => {
       setForm(state => ({ ...state, [e.target.name]: !state.remember }))
    }
 
-   const handleSubmit = () => {}
+   const gotoForgot = () => history.push("/forgot")
+
+   const handleLogin = () => {
+      history.push("verify/yubikey")
+   }
 
    return (
       <div className="h-screen flex justify-center items-center bg login">
-         <div className="w-5/6 bg-white p-10 rounded-lg shadow-lg login-box-md">
-            <div className="flex flex-col items-center text-center p-8 pt-0">
+         <div className="w-full mx-2 p-6 bg-white md:p-10 rounded-lg shadow-lg login-box-md">
+            <div className="flex flex-col items-center text-center pb-8 my-3 pt-0">
                <img src={logo} alt="consent" className="logo" />
                <h1 className="text-lg">CONSENT</h1>
             </div>
@@ -36,13 +39,16 @@ const App = () => {
             </div>
             <div className="flex justify-between py-6">
                <label className="flex items-center select-none cursor-pointer">
-                  <input type="checkbox" name="remember" onChange={handleCheckbox} className="mr-1 text-lg" /> Remember me
+                  <input type="checkbox" name="remember" onChange={handleCheckbox} className="mr-1 text-lg whitespace-no-wrap" />{" "}
+                  Remember me
                </label>
-               <label className="cursor-pointer">Forgot Password</label>
+               <label onClick={gotoForgot} className="cursor-pointer whitespace-no-wrap">
+                  Forgot Password
+               </label>
             </div>
-            <div className="flex justify-center py-8">
+            <div className="flex justify-center py-5">
                <button
-                  onClick={handleSubmit}
+                  onClick={handleLogin}
                   type="button"
                   className="bg-hover text-white px-10 py-2 btn-rounded text-base transition-all duration-300 shadow-lg hover:shadow-sm"
                >
@@ -50,13 +56,16 @@ const App = () => {
                </button>
             </div>
          </div>
+         <div className="w-full fixed px-5 text-xs text-white text-center md:text-right legal">
+            <label>Term of use. Privacy policy</label>
+         </div>
       </div>
    )
 }
 
-export default App
+export default memo(Login)
 
-const TextInput = React.memo(props => (
+const TextInput = memo(props => (
    <input
       {...props}
       className="my-4 px-4 py-2 border-b border-gray-400 focus:border-second-500 placeholder-black transition-all duration-300"
