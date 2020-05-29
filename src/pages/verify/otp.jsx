@@ -17,7 +17,7 @@ const Login = () => {
 
    return (
       <div className="h-screen flex justify-center items-center bg login">
-         <div className="w-full mx-2 p-6 bg-white md:p-10 rounded-lg shadow-lg login-box-md">
+         <div className="w-full mx-2 p-6 pt-10 bg-white md:p-10 rounded-lg shadow-lg login-box-md">
             <div className="flex flex-col items-center text-center pb-8 pt-0">
                <img src={logo} alt="consent" className="logo" />
             </div>
