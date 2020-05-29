@@ -13,9 +13,9 @@ const App = () => {
 
    useEffect(() => {
       setTimeout(() => setReady(true), 1000) //just delaying like when fetch data, can remove anytime
-      if (!global.logged) {
-         history.replace("/login")
-      }
+      // if (!global.logged) {
+      //    history.replace("/login")
+      // }
    }, [isReady, setReady, global.logged])
 
    return (
