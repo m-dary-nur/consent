@@ -43,9 +43,14 @@ const LazyLoader = ({ match }) => {
             setPage(s2)
             break
          }
-         default: {
+         case params.segment1 && true: {
             const s1 = lazy(() => import(`../pages/${params.segment1}`))
             setPage(s1)
+            break
+         }
+         default: {
+            const s0 = lazy(() => import(`../pages/main`))
+            setPage(s0)
          }
       }
    }, [params, setPage])

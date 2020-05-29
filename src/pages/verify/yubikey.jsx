@@ -1,5 +1,5 @@
 import React, { memo, useState, useEffect } from "react"
-import logo from "../../logo.svg"
+import logo from "../../images/logo.png"
 import history from "../../helpers/history"
 import Icon from "../../components/Icon"
 
@@ -18,7 +18,6 @@ const Login = () => {
          <div className="w-full mx-2 p-6 bg-white md:p-10 rounded-lg shadow-lg login-box-md">
             <div className="flex flex-col items-center text-center pb-8 pt-0">
                <img src={logo} alt="consent" className="logo" />
-               <h1 className="text-lg">CONSENT</h1>
             </div>
             <div className="text-gray-600 text-center font-semibold">2-Step Verification</div>
             <div className="pt-16 text-center">Insert your USB security key</div>

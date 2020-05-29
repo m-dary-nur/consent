@@ -1,5 +1,5 @@
 import React, { memo, useState } from "react"
-import logo from "../logo.svg"
+import logo from "../images/logo.png"
 import history from "../helpers/history"
 
 const Login = () => {
@@ -28,9 +28,8 @@ const Login = () => {
    return (
       <div className="h-screen flex justify-center items-center bg login">
          <div className="w-full mx-2 p-6 bg-white md:p-10 rounded-lg shadow-lg login-box-md">
-            <div className="flex flex-col items-center text-center pb-8 my-3 pt-0">
+            <div className="flex flex-col items-center text-center pb-8 mb-6 pt-0">
                <img src={logo} alt="consent" className="logo" />
-               <h1 className="text-lg">CONSENT</h1>
             </div>
             <div className="text-gray-600 text-center">Welcome back! Please login to your account.</div>
             <div className="flex flex-col">
