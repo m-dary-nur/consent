@@ -3,7 +3,7 @@ import logo from "../../images/logo.png"
 import history from "../../helpers/history"
 import Icon from "../../components/Icon"
 
-const Login = () => {
+const Yubikey = () => {
    const [plug, setPlug] = useState(false)
 
    const gotoOtp = () => history.push("/verify/otp")
@@ -44,4 +44,4 @@ const Login = () => {
    )
 }
 
-export default memo(Login)
+export default memo(Yubikey)

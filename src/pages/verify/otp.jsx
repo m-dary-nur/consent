@@ -1,7 +1,7 @@
 import React, { memo, useState } from "react"
 import logo from "../../images/logo.png"
 
-const Login = () => {
+const Otp = () => {
    const [form, setForm] = useState({
       otp: "",
    })
@@ -48,7 +48,7 @@ const Login = () => {
    )
 }
 
-export default memo(Login)
+export default memo(Otp)
 
 const TextInput = memo(props => (
    <input
