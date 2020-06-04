@@ -1,9 +1,9 @@
 import React, { memo, useState } from "react"
-import logo from "../../images/logo.png"
+import logo from "../../assets/images/logo.png"
 
-const Otp = () => {
+const Forgot = () => {
    const [form, setForm] = useState({
-      otp: "",
+      email: "",
    })
 
    const handleChange = e => {
@@ -11,33 +11,25 @@ const Otp = () => {
       setForm(state => ({ ...state, [e.target.name]: e.target.value }))
    }
 
-   const handleNoCode = () => {}
-
-   const handleVerify = () => {}
+   const handleSendReq = () => {}
 
    return (
       <div className="h-screen flex justify-center items-center bg login">
          <div className="w-full mx-2 p-6 pt-10 bg-white md:p-10 rounded-lg shadow-lg login-box-md">
-            <div className="flex flex-col items-center text-center pb-8 pt-0">
+            <div className="flex flex-col items-center text-center pb-8 my-3 pt-0">
                <img src={logo} alt="consent" className="logo" />
             </div>
-            <div className="text-gray-600 text-center font-semibold">2-Step Verification</div>
-            <div className="text-gray-600 pt-12 text-center">
-               Please enter the 6-digit OTP verification code sent to your mobile phone
-            </div>
-            <div className="flex flex-col">
-               <TextInput type="number" name="otp" value={form.otp} onChange={handleChange} placeholder="6-digit Code" />
-            </div>
-            <div onClick={handleNoCode} className="flex justify-end pt-6 pb-8">
-               <label className="cursor-pointer whitespace-no-wrap">No Code ?</label>
+            <div className="text-gray-600 text-center">Enter your registered email and we send you a password reset link.</div>
+            <div className="flex flex-col my-16">
+               <TextInput name="email" value={form.email} onChange={handleChange} placeholder="Email ID" />
             </div>
             <div className="flex justify-center py-5">
                <button
-                  onClick={handleVerify}
+                  onClick={handleSendReq}
                   type="button"
                   className="bg-hover text-white px-10 py-2 btn-rounded text-base transition-all duration-300 shadow-lg hover:shadow-sm"
                >
-                  Verify
+                  SEND REQUEST
                </button>
             </div>
          </div>
@@ -48,8 +40,6 @@ const Otp = () => {
    )
 }
 
-export default memo(Otp)
-
 const TextInput = memo(props => (
    <input
       {...props}
@@ -58,3 +48,5 @@ const TextInput = memo(props => (
       spellCheck="false"
    />
 ))
+
+export default memo(Forgot)

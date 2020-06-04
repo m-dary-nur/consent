@@ -7,7 +7,7 @@ const store = createContext(initialState)
 
 const { Provider } = store
 
-const GlobalProvider = ({ children }) => {
+const SessionProvider = ({ children }) => {
    const [state, dispatch] = useReducer((state, action) => {
       switch (action.type) {
          case "logged":
@@ -23,4 +23,4 @@ const GlobalProvider = ({ children }) => {
    return <Provider value={{ dispatch, state }}>{children}</Provider>
 }
 
-export { store, GlobalProvider }
+export { store, SessionProvider }

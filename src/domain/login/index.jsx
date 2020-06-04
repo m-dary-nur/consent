@@ -1,6 +1,6 @@
 import React, { memo, useState } from "react"
-import logo from "../images/logo.png"
-import history from "../helpers/history"
+import logo from "../../assets/images/logo.png"
+import history from "../../utils/history"
 
 const Login = () => {
    const [form, setForm] = useState({
@@ -22,7 +22,7 @@ const Login = () => {
    const gotoForgot = () => history.push("/forgot")
 
    const handleLogin = () => {
-      history.push("verify/yubikey")
+      history.push("/yubikey")
    }
 
    return (
@@ -62,8 +62,6 @@ const Login = () => {
    )
 }
 
-export default memo(Login)
-
 const TextInput = memo(props => (
    <input
       {...props}
@@ -72,3 +70,5 @@ const TextInput = memo(props => (
       spellCheck="false"
    />
 ))
+
+export default memo(Login)

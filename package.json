@@ -17,9 +17,9 @@
     "react-scripts": "3.4.1"
   },
   "scripts": {
-    "prestart": "tailwind build ./src/styles/tailwind.css -c ./tailwind.config.js -o ./src/styles/global.css",
+    "prestart": "tailwind build ./src/assets/styles/tailwind.css -c ./tailwind.config.js -o ./src/assets/styles/global.css",
     "start": "react-scripts start",
-    "prebuild": "tailwind build ./src/styles/tailwind.css -c ./tailwind.config.js -o ./src/styles/global.css",
+    "prebuild": "tailwind build ./src/assets/styles/tailwind.css -c ./tailwind.config.js -o ./src/assets/styles/global.css",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

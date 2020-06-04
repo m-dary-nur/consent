@@ -1,7 +1,7 @@
 import React, { memo, useState } from "react"
-import logo from "../../images/logo.png"
+import logo from "../../assets/images/logo.png"
 
-const GoogleAuth = () => {
+const Otp = () => {
    const [form, setForm] = useState({
       otp: "",
    })
@@ -23,7 +23,7 @@ const GoogleAuth = () => {
             </div>
             <div className="text-gray-600 text-center font-semibold">2-Step Verification</div>
             <div className="text-gray-600 pt-12 text-center">
-               Please enter the 6-digit verification code your mobile application generated
+               Please enter the 6-digit OTP verification code sent to your mobile phone
             </div>
             <div className="flex flex-col">
                <TextInput type="number" name="otp" value={form.otp} onChange={handleChange} placeholder="6-digit Code" />
@@ -48,8 +48,6 @@ const GoogleAuth = () => {
    )
 }
 
-export default memo(GoogleAuth)
-
 const TextInput = memo(props => (
    <input
       {...props}
@@ -58,3 +56,5 @@ const TextInput = memo(props => (
       spellCheck="false"
    />
 ))
+
+export default memo(Otp)

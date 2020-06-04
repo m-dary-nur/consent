@@ -1,11 +1,10 @@
-import React, { useContext, useState, useEffect } from "react"
+import React, { memo, useContext, useState, useEffect } from "react"
 import { Router } from "react-router"
-import { store, GlobalProvider } from "./stores/globalStore"
-import DynamicRoutes from "./components/DynamicRoutes"
-import history from "./helpers/history"
+import { store, SessionProvider } from "../../context/session"
+import DynamicRoutes from "../Container"
+import history from "../../utils/history"
 
-import "./App.css"
-import "./styles/global.css"
+import "./style.css"
 
 const App = () => {
    const { ...global } = useContext(store)
@@ -20,13 +19,13 @@ const App = () => {
 
    return (
       <Router history={history}>
-         <div className="h-screen font-sans">
-            <GlobalProvider>
+         <div className="min-h-screen font-sans">
+            <SessionProvider>
                <DynamicRoutes isReady={isReady} />
-            </GlobalProvider>
+            </SessionProvider>
          </div>
       </Router>
    )
 }
 
-export default React.memo(App)
+export default memo(App)
